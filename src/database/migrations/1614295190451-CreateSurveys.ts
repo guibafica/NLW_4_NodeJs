@@ -1,11 +1,12 @@
 /* eslint-disable class-methods-use-this */
+/* eslint-disable no-undef */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateNewUsers1614208739809 implements MigrationInterface {
+export default class CreateSurveys1614295190451 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'users',
+        name: 'surveys',
         columns: [
           {
             name: 'id',
@@ -13,11 +14,11 @@ export default class CreateNewUsers1614208739809 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'name',
+            name: 'title',
             type: 'varchar',
           },
           {
-            name: 'email',
+            name: 'description',
             type: 'varchar',
           },
           {
@@ -31,6 +32,6 @@ export default class CreateNewUsers1614208739809 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('users');
+    await queryRunner.dropTable('surveys');
   }
 }
