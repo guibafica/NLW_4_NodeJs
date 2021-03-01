@@ -38,6 +38,17 @@ export default class CreateSurveysUsers1614634796734 implements MigrationInterfa
             referencedTableName: 'users',
             referencedColumnNames: ['id'],
             columnNames: ['user_id'],
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
+          },
+
+          {
+            name: 'FKSurvey',
+            referencedTableName: 'surveys',
+            referencedColumnNames: ['id'],
+            columnNames: ['survey_id'],
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
           },
         ],
       }),
